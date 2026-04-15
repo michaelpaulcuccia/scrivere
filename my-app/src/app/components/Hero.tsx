@@ -1,4 +1,5 @@
 "use client";
+import NeonDropdown from "./NeonDropdown";
 
 const ASCII_ART = `
  _    _      _ _        __          __        _     _ 
@@ -12,6 +13,7 @@ const ASCII_ART = `
 export default function Hero() {
   return (
     <div style={styles.wrapper}>
+      <NeonDropdown />
       <pre style={styles.pre}>{ASCII_ART}</pre>
 
       <p>Would you like to play a game?</p>
