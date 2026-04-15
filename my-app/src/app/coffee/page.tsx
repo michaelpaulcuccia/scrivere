@@ -1,5 +1,10 @@
 //import React from 'react'
+import WelcomeText from "../components/WelcomeText";
 
 export default function coffee() {
-  return <div>coffee</div>;
+  return (
+    <div>
+      <WelcomeText />
+    </div>
+  );
 }
