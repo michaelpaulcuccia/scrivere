@@ -1,28 +1,32 @@
 "use client";
-import NeonDropdown from "./NeonDropdown";
 
-const ASCII_ART = `
- _    _      _ _        __          __        _     _ 
-| |  | |    | | |       \\ \\        / /       | |   | |
-| |__| | ___| | | ___    \\ \\  /\\  / /__  _ __| | __| |
-|  __  |/ _ \\ | |/ _ \\    \\ \\/  \\/ / _ \\| '__| |/ _\` |
-| |  | |  __/ | | (_) |    \\  /\\  / (_) | |  | | (_| |
-|_|  |_|\\___|_|_|\\___/      \\/  \\/ \\___/|_|  |_|\\__,_|
-`;
+import NeonDropdown from "./NeonDropdown";
+import AsciiHero from "./AsciiHero";
+import Text from "./Text";
 
 export default function Hero() {
   return (
     <div style={styles.wrapper}>
-      <NeonDropdown />
-      <pre style={styles.pre}>{ASCII_ART}</pre>
-
-      <p>Would you like to play a game?</p>
-      <p>
-        &gt;<span className="blink">_</span>
-      </p>
-
-      <div style={styles.interlaced} />
       <div style={styles.glare} />
+      <div style={styles.interlaced} />
+
+      {/* CENTERED HERO BLOCK */}
+      <div style={styles.centerBlock}>
+        <AsciiHero />
+
+        <div style={styles.dropdownWrap}>
+          <NeonDropdown />
+        </div>
+      </div>
+
+      {/* LEFT ALIGNED TERMINAL TEXT */}
+      <div style={styles.terminalBlock}>
+        <Text>Would you like to play a game?</Text>
+
+        <Text>
+          &gt;<span className="blink">_</span>
+        </Text>
+      </div>
 
       <style jsx>{`
         .blink {
@@ -66,19 +70,41 @@ export default function Hero() {
 const styles = {
   wrapper: {
     background: "hsl(154 50% 5%)",
-    color: "hsl(154 84% 70%)",
-    textShadow: "0 0 4px hsl(154 84% 70%)",
-    fontFamily: "monospace",
-    fontSize: "16px",
     minHeight: "100vh",
     position: "relative" as const,
     overflow: "hidden",
+    color: "hsl(154 84% 70%)",
+    textShadow: "0 0 4px hsl(154 84% 70%)",
+    fontFamily: "monospace",
   },
-  pre: {
-    margin: "auto",
-    marginTop: "10vh",
-    display: "table",
+
+  /* centered ASCII + menu */
+  centerBlock: {
+    maxWidth: "900px",
+    margin: "0 auto",
+    padding: "60px 40px 20px",
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "center",
   },
+
+  dropdownWrap: {
+    marginTop: "20px",
+  },
+
+  /* LEFT TERMINAL SECTION */
+  terminalBlock: {
+    maxWidth: "900px",
+    margin: "0 auto",
+    padding: "20px 40px 60px",
+
+    display: "flex",
+    flexDirection: "column" as const,
+    alignItems: "flex-start", // 👈 key change
+    textAlign: "left" as const,
+    gap: "8px",
+  },
+
   glare: {
     position: "fixed" as const,
     top: 0,
@@ -88,6 +114,7 @@ const styles = {
     zIndex: -1,
     background: "radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%)",
   },
+
   interlaced: {
     position: "fixed" as const,
     top: 0,
@@ -98,6 +125,6 @@ const styles = {
     pointerEvents: "none" as const,
     background:
       "repeating-linear-gradient(transparent 0px 1px, rgba(0,0,0,0.3) 3px 4px)",
-    animation: "lines 0.066666666s linear infinite",
+    animation: "lines 0.066s linear infinite",
   },
 };
