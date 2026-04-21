@@ -2,7 +2,6 @@
 
 import NeonDropdown from "./NeonDropdown";
 import AsciiHero from "./AsciiHero";
-import Text from "./Text";
 import React from "react";
 
 type Props = {
