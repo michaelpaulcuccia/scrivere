@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { DropdownSection, dropdownData } from "../data/DropdownData";
 
 type Props = {
@@ -13,9 +14,18 @@ const NeonDropdown: React.FC<Props> = ({
   data = dropdownData,
   label = "Menu",
 }) => {
+  const pathname = usePathname();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+
+  // ✅ FIX: close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    setActiveSection(null);
+    setHoveredItem(null);
+  }, [pathname]);
 
   return (
     <>
