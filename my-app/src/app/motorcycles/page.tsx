@@ -1,12 +1,12 @@
 import Hero from "@/app/components/Hero";
-import { COFFEE } from "@/app/data/ASCIIArt";
+import { MOTORCYCLES } from "@/app/data/ASCIIArt";
 import Text from "@/app/components/Text";
 
 export default function Page() {
   return (
     <div>
-      <Hero asciiArt={COFFEE}>
-        <Text>How to drink coffee</Text>
+      <Hero asciiArt={MOTORCYCLES}>
+        <Text>Motorcyles</Text>
         <Text>
           &gt;<span className="blink">_</span>
         </Text>
