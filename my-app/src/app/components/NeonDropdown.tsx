@@ -128,54 +128,59 @@ export default NeonDropdown;
 const styles = {
   navMenu: {
     fontFamily: "'Courier New', Courier, monospace",
-    backgroundColor: "#000",
     color: "#0ff",
-    padding: "20px",
     textShadow: "0 0 6px #0ff",
+    padding: "20px",
     animation: "flicker 0.15s infinite",
   },
+
   menuButton: {
     position: "relative" as const,
     display: "inline-block",
     padding: "10px 20px",
     border: "2px solid #f0f",
-    background: "#111",
     cursor: "pointer",
     boxShadow: "0 0 10px #f0f",
+    color: "#ff0",
+    background: "transparent", // 👈 removed black box
   },
+
   dropdown: {
     position: "absolute" as const,
     top: "100%",
     left: 0,
-    backgroundColor: "#000",
-    border: "2px solid #f0f",
     minWidth: "200px",
     zIndex: 1000,
+    background: "transparent", // 👈 no fill
   },
+
   sectionItem: {
     position: "relative" as const,
     padding: "10px",
     borderBottom: "1px solid #f0f",
     cursor: "pointer",
+    background: "transparent", // 👈 no fill
   },
+
   sectionItemActive: {
-    backgroundColor: "#111",
     boxShadow: "0 0 8px #ff0 inset",
   },
+
   sectionLink: {
     color: "#ff0",
     textDecoration: "none",
     display: "block",
   },
+
   flyout: {
     position: "absolute" as const,
     top: 0,
     left: "100%",
-    backgroundColor: "#000",
-    border: "2px solid #f0f",
     minWidth: "200px",
     zIndex: 1000,
+    background: "transparent", // 👈 no fill
   },
+
   link: {
     display: "block",
     padding: "10px",
@@ -184,11 +189,13 @@ const styles = {
     borderBottom: "1px solid #f0f",
     textShadow: "0 0 4px #ff0",
   },
+
   linkHover: {
     backgroundColor: "#f0f",
     color: "#000",
     textShadow: "none",
   },
+
   glare: {
     position: "fixed" as const,
     top: 0,
@@ -199,6 +206,7 @@ const styles = {
     background:
       "radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%)",
   },
+
   interlaced: {
     position: "fixed" as const,
     top: 0,
