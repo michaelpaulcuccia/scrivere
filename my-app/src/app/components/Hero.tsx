@@ -3,29 +3,31 @@
 import NeonDropdown from "./NeonDropdown";
 import AsciiHero from "./AsciiHero";
 import Text from "./Text";
+import React from "react";
 
-export default function Hero() {
+type Props = {
+  asciiArt: string;
+  children?: React.ReactNode;
+};
+
+export default function Hero({ asciiArt, children }: Props) {
   return (
     <div style={styles.wrapper}>
       {/* CENTERED HERO BLOCK */}
       <div style={styles.centerBlock}>
-        <AsciiHero />
+        <AsciiHero art={asciiArt} />
 
         <div style={styles.dropdownWrap}>
           <NeonDropdown />
         </div>
       </div>
 
-      {/* LEFT TERMINAL TEXT */}
+      {/* LEFT TERMINAL SECTION (now includes children) */}
       <div style={styles.terminalBlock}>
-        <Text>Would you like to play a game?</Text>
-
-        <Text>
-          &gt;<span className="blink">_</span>
-        </Text>
+        {/* 👇 injected page content */}
+        {children}
       </div>
 
-      {/* Cursor blink only */}
       <style jsx>{`
         .blink {
           animation: blink 0.4s linear infinite;

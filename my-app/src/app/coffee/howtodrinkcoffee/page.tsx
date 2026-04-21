@@ -1,3 +1,16 @@
-export default function page() {
-  return <div>How to drink coffee</div>;
+import Hero from "@/app/components/Hero";
+import { WELCOME } from "@/app/data/ASCIIArt";
+import Text from "@/app/components/Text";
+
+export default function Page() {
+  return (
+    <div>
+      <Hero asciiArt={WELCOME}>
+        <Text>TEXT SHOULD BE RENDERED HERE</Text>
+        <Text>
+          &gt;<span className="blink">_</span>
+        </Text>
+      </Hero>
+    </div>
+  );
 }
