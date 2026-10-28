@@ -11,6 +11,10 @@ export default function Page() {
           &gt;<span className="blink">_</span>
         </Text>
       </Hero>
+      <Text>
+        Coffee begins with high quality, fresh roasted beans and clean spring
+        water.
+      </Text>
     </div>
   );
 }

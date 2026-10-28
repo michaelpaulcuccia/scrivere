@@ -11,6 +11,7 @@ export default function Page() {
           &gt;<span className="blink">_</span>
         </Text>
       </Hero>
+      <Hero>I purchased my first motorcycle in the Spring of 2026.</Hero>
     </div>
   );
 }

@@ -11,6 +11,10 @@ export default function Page() {
           &gt;<span className="blink">_</span>
         </Text>
       </Hero>
+      <Text>
+        I would like to share how I prepare my coffee as well as the way that I
+        like to drink it. But first, I ought to tell you my coffee story.
+      </Text>
     </div>
   );
 }
