@@ -56,5 +56,6 @@ const styles = {
     position: "relative" as const,
     zIndex: 2,
     minHeight: "100vh",
+    margin: "0 25px",
   },
 };
